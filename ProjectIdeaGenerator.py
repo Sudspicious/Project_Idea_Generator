@@ -75,7 +75,6 @@ def generate():
 
 #Please change the color to your liking , if you feel that the color is making you uncomfortable in the color and its attributed form options
 
-
 root = ctk.CTk()
 root.geometry("900x900")
 root.title("Project Idea Generator Using AI - Simplified Version")
@@ -86,11 +85,11 @@ title_label.pack(padx=10, pady=(4, 2))
 frame = ctk.CTkFrame(root, fg_color="dark green")
 frame.pack(fill="x",padx=10)
 
-top_frame = ctk.CTkFrame(frame, fg_color="light grey")
-top_frame.pack(fill="x", padx=5, pady=10)
+top_frame = ctk.CTkScrollableFrame(frame, fg_color="light grey", height=200)
+top_frame.pack(fill="x", padx=10, pady=10)
 
 language_frame = ctk.CTkFrame(top_frame)
-language_frame.pack(padx=10, pady=5, fill="both")
+language_frame.pack(padx=10, pady=10, fill="both")
 
 language_label = ctk.CTkLabel(language_frame, text="Programming Language")
 language_label.pack()
@@ -103,7 +102,7 @@ language_dropdown.pack(pady=5)
 domain_frame = ctk.CTkFrame(top_frame)
 domain_frame.pack(padx=10, fill="both")
 
-domain_label = ctk.CTkLabel(domain_frame, text="Programming Language")
+domain_label = ctk.CTkLabel(domain_frame, text="Domain")
 domain_label.pack()
 
 domain_dropdown = ctk.CTkComboBox(domain_frame,width=300,
@@ -113,7 +112,7 @@ domain_dropdown = ctk.CTkComboBox(domain_frame,width=300,
 domain_dropdown.pack(pady=5)
 
 level_frame = ctk.CTkFrame(top_frame)
-level_frame.pack(padx=10, pady=5, fill="both")
+level_frame.pack(padx=10, pady=10, fill="both")
 
 level_label = ctk.CTkLabel(level_frame, text="Project difficulty", font=ctk.CTkFont(weight="bold"))
 level_label.pack()
@@ -157,31 +156,31 @@ friendly_Checkbox = ctk.CTkCheckBox(feature_frame, text="Beginner and Challenger
 friendly_Checkbox.pack(side="left", padx=10, pady=5)
 
 custom_frame = ctk.CTkFrame(top_frame)
-custom_frame.pack(padx=10, pady=5, fill="both")
+custom_frame.pack(padx=10, pady=10, fill="both")
 
 custom_label = ctk.CTkLabel(custom_frame, text="Custom input", font=ctk.CTkFont(weight="bold"))
 custom_label.pack()
 
 entry_box = ctk.CTkEntry(custom_frame, width=500)
-entry_box.pack(padx=10, pady=5)
+entry_box.pack(padx=10, pady=10)
 
 mid_frame = ctk.CTkFrame(root, fg_color="dark green")
 mid_frame.pack(fill="x",padx=10, pady=10)
 
 button = ctk.CTkButton(mid_frame, text="Generate The Ideas", command=generate, text_color="black", fg_color="white")
-button.pack(padx=190, fill="x", pady=5)
+button.pack(padx=190, fill="x", pady=10)
 
 bottom_frame = ctk.CTkFrame(root, fg_color="dark blue")
-bottom_frame.pack(pady=5, padx=10, fill="x")
+bottom_frame.pack(padx=10, fill="x")
 
 result_frame = ctk.CTkFrame(bottom_frame, fg_color="light blue")
-result_frame.pack(pady=5, fill="x", padx=10)
+result_frame.pack(pady=10, fill="x", padx=10)
 
 result_label = ctk.CTkLabel(result_frame, text="The Ideas Generated Are", font=ctk.CTkFont(weight="bold"),
                             text_color='black')
 result_label.pack(fill="x", padx=10)
 
-result = ctk.CTkTextbox(result_frame, font=ctk.CTkFont(size=15))
-result.pack(fill="x", padx=10, pady=5)
+result = ctk.CTkTextbox(result_frame, font=ctk.CTkFont(size=15), height=300)
+result.pack(fill="x", padx=10, pady=10)
 
 root.mainloop()
